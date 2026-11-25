@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KRSM DIGITAL - SM Al-Islah Sg. Petani (DigitalKrsmSMAI)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', 'Poppins', sans-serif; background: #F8F9FA; }
+    @media print {
+      body * { visibility: hidden; }
+      #printable-area, #printable-area * { visibility: visible; }
+      #printable-area { position: fixed; left: 0; top: 0; width: 100%; background: #fff !important; padding: 24px !important; }
+      .no-print { display: none !important; }
+    }
+  </style>
+</head>
+<body class="text-slate-800">
+  <div id="root"></div>
+  <script>
+    (function() {
+      const preset = {"krsm_ahli_list":[{"id":"ahli-1","no_keahlian":"KRSM-2026-001","nama_penuh":"Muhammad Harith bin Ahmad","no_kp":"090314-02-0411","tingkatan":5,"kelas":"5 ALI","jantina":"Banin","pangkat":"Sarjan","jawatan":"Pengerusi","no_tel_waris":"012-4512233","status":"Aktif"},{"id":"ahli-2","no_keahlian":"KRSM-2026-002","nama_penuh":"Nurul Aina binti Mohd Razak","no_kp":"090722-02-0618","tingkatan":5,"kelas":"5 AZZUBAIR","jantina":"Banat","pangkat":"Sarjan","jawatan":"Naib Pengerusi","no_tel_waris":"013-5128890","status":"Aktif"},{"id":"ahli-3","no_keahlian":"KRSM-2026-003","nama_penuh":"Aisyah Humaira binti Zulkifli","no_kp":"100219-02-0324","tingkatan":4,"kelas":"4 SAAD WAQAS","jantina":"Banat","pangkat":"Koperal","jawatan":"Setiausaha","no_tel_waris":"019-4481201","status":"Aktif"},{"id":"ahli-4","no_keahlian":"KRSM-2026-004","nama_penuh":"Luqman Hakim bin Ismail","no_kp":"101105-02-0199","tingkatan":4,"kelas":"4 SAID SAIZ","jantina":"Banin","pangkat":"Koperal","jawatan":"Bendahari","no_tel_waris":"017-4091122","status":"Aktif"},{"id":"ahli-5","no_keahlian":"KRSM-2026-005","nama_penuh":"Amirul Mukminin bin Hassan","no_kp":"110508-02-0731","tingkatan":3,"kelas":"3 UMAR","jantina":"Banin","pangkat":"Lans Koperal","jawatan":"AJK","no_tel_waris":"012-5673321","status":"Aktif"},{"id":"ahli-6","no_keahlian":"KRSM-2026-006","nama_penuh":"Siti Khadijah binti Osman","no_kp":"110827-02-0842","tingkatan":3,"kelas":"3 USMAN","jantina":"Banat","pangkat":"Lans Koperal","jawatan":"AJK","no_tel_waris":"014-2559011","status":"Aktif"},{"id":"ahli-7","no_keahlian":"KRSM-2026-007","nama_penuh":"Danial Irfan bin Kamaruddin","no_kp":"120115-02-0513","tingkatan":2,"kelas":"2 ABDURRAHMAN","jantina":"Banin","pangkat":"Kadet","jawatan":"Ahli Biasa","no_tel_waris":"016-4129900","status":"Aktif"},{"id":"ahli-8","no_keahlian":"KRSM-2026-008","nama_penuh":"Farah Nabihah binti Azman","no_kp":"120603-02-0456","tingkatan":2,"kelas":"2 ABU UBAIDAH","jantina":"Banat","pangkat":"Kadet","jawatan":"Ahli Biasa","no_tel_waris":"018-3902214","status":"Aktif"},{"id":"ahli-9","no_keahlian":"KRSM-2026-009","nama_penuh":"Izzat Syafiq bin Mahmud","no_kp":"130410-02-0675","tingkatan":1,"kelas":"1 TALHAH","jantina":"Banin","pangkat":"Kadet","jawatan":"Ahli Biasa","no_tel_waris":"011-2409876","status":"Aktif"},{"id":"ahli-10","no_keahlian":"KRSM-2026-010","nama_penuh":"Maryam Jamilah binti Fauzi","no_kp":"130921-02-0912","tingkatan":1,"kelas":"1 ABU BAKAR","jantina":"Banat","pangkat":"Kadet","jawatan":"Ahli Biasa","no_tel_waris":"013-4890012","status":"Aktif"},{"id":"ahli-11","no_keahlian":"KRSM-2026-011","nama_penuh":"Hafizuddin bin Ramli","no_kp":"100918-02-0387","tingkatan":4,"kelas":"4 SAAD WAQAS","jantina":"Banin","pangkat":"Kadet","jawatan":"AJK","no_tel_waris":"019-5107788","status":"Aktif"}],"krsm_perjumpaan_list":[{"id":"pjp-1","bil_perjumpaan":1,"tajuk":"Suaikenal, Pelantikan AJK & Asas Kawad Kaki","tarikh":"2026-02-11","masa":"2.30 Petang – 4.30 Petang","tempat":"Dataran Perhimpunan Sekolah","catatan":"Sesi pembukaan tahunan KRSM."},{"id":"pjp-2","bil_perjumpaan":2,"tajuk":"Ikatan, Simpulan & Pertolongan Cemas Asas","tarikh":"2026-02-25","masa":"2.30 Petang – 4.30 Petang","tempat":"Dewan Terbuka & Padang","catatan":"Latihan amali berkumpulan Banin & Banat."},{"id":"pjp-3","bil_perjumpaan":3,"tajuk":"Kompas, Orienteering & Kerohanian Kadet","tarikh":"2026-03-11","masa":"2.30 Petang – 4.30 Petang","tempat":"Kawasan Sekitar Sekolah","catatan":"Tazkirah & semakan kehadiran."}],"krsm_kehadiran_records":[{"id":"keh-pjp-1-ahli-1","perjumpaan_id":"pjp-1","ahli_id":"ahli-1","status":"Hadir","catatan":""},{"id":"keh-pjp-1-ahli-2","perjumpaan_id":"pjp-1","ahli_id":"ahli-2","status":"Hadir","catatan":""},{"id":"keh-pjp-1-ahli-3","perjumpaan_id":"pjp-1","ahli_id":"ahli-3","status":"Hadir","catatan":""},{"id":"keh-pjp-1-ahli-4","perjumpaan_id":"pjp-1","ahli_id":"ahli-4","status":"Hadir","catatan":""},{"id":"keh-pjp-1-ahli-5","perjumpaan_id":"pjp-1","ahli_id":"ahli-5","status":"Hadir","catatan":""},{"id":"keh-pjp-1-ahli-6","perjumpaan_id":"pjp-1","ahli_id":"ahli-6","status":"Hadir","catatan":""},{"id":"keh-pjp-1-ahli-7","perjumpaan_id":"pjp-1","ahli_id":"ahli-7","status":"Hadir","catatan":""},{"id":"keh-pjp-1-ahli-8","perjumpaan_id":"pjp-1","ahli_id":"ahli-8","status":"Hadir","catatan":""},{"id":"keh-pjp-1-ahli-9","perjumpaan_id":"pjp-1","ahli_id":"ahli-9","status":"Hadir","catatan":""},{"id":"keh-pjp-1-ahli-10","perjumpaan_id":"pjp-1","ahli_id":"ahli-10","status":"Hadir","catatan":""},{"id":"keh-pjp-1-ahli-11","perjumpaan_id":"pjp-1","ahli_id":"ahli-11","status":"Hadir","catatan":""},{"id":"keh-pjp-2-ahli-1","perjumpaan_id":"pjp-2","ahli_id":"ahli-1","status":"Hadir","catatan":""},{"id":"keh-pjp-2-ahli-2","perjumpaan_id":"pjp-2","ahli_id":"ahli-2","status":"Hadir","catatan":""},{"id":"keh-pjp-2-ahli-3","perjumpaan_id":"pjp-2","ahli_id":"ahli-3","status":"Hadir","catatan":""},{"id":"keh-pjp-2-ahli-4","perjumpaan_id":"pjp-2","ahli_id":"ahli-4","status":"Hadir","catatan":""},{"id":"keh-pjp-2-ahli-5","perjumpaan_id":"pjp-2","ahli_id":"ahli-5","status":"Hadir","catatan":""},{"id":"keh-pjp-2-ahli-6","perjumpaan_id":"pjp-2","ahli_id":"ahli-6","status":"Hadir","catatan":""},{"id":"keh-pjp-2-ahli-7","perjumpaan_id":"pjp-2","ahli_id":"ahli-7","status":"Bersebab","catatan":"Urusan keluarga"},{"id":"keh-pjp-2-ahli-8","perjumpaan_id":"pjp-2","ahli_id":"ahli-8","status":"Hadir","catatan":""},{"id":"keh-pjp-2-ahli-9","perjumpaan_id":"pjp-2","ahli_id":"ahli-9","status":"Hadir","catatan":""},{"id":"keh-pjp-2-ahli-10","perjumpaan_id":"pjp-2","ahli_id":"ahli-10","status":"Hadir","catatan":""},{"id":"keh-pjp-2-ahli-11","perjumpaan_id":"pjp-2","ahli_id":"ahli-11","status":"Hadir","catatan":""},{"id":"keh-pjp-3-ahli-1","perjumpaan_id":"pjp-3","ahli_id":"ahli-1","status":"Hadir","catatan":""},{"id":"keh-pjp-3-ahli-2","perjumpaan_id":"pjp-3","ahli_id":"ahli-2","status":"Hadir","catatan":""},{"id":"keh-pjp-3-ahli-3","perjumpaan_id":"pjp-3","ahli_id":"ahli-3","status":"Hadir","catatan":""},{"id":"keh-pjp-3-ahli-4","perjumpaan_id":"pjp-3","ahli_id":"ahli-4","status":"Hadir","catatan":""},{"id":"keh-pjp-3-ahli-5","perjumpaan_id":"pjp-3","ahli_id":"ahli-5","status":"Hadir","catatan":""},{"id":"keh-pjp-3-ahli-6","perjumpaan_id":"pjp-3","ahli_id":"ahli-6","status":"Hadir","catatan":""},{"id":"keh-pjp-3-ahli-7","perjumpaan_id":"pjp-3","ahli_id":"ahli-7","status":"Hadir","catatan":""},{"id":"keh-pjp-3-ahli-8","perjumpaan_id":"pjp-3","ahli_id":"ahli-8","status":"Hadir","catatan":""},{"id":"keh-pjp-3-ahli-9","perjumpaan_id":"pjp-3","ahli_id":"ahli-9","status":"Hadir","catatan":""},{"id":"keh-pjp-3-ahli-10","perjumpaan_id":"pjp-3","ahli_id":"ahli-10","status":"Hadir","catatan":""},{"id":"keh-pjp-3-ahli-11","perjumpaan_id":"pjp-3","ahli_id":"ahli-11","status":"Tidak Hadir","catatan":""}],"krsm_laporan_list":[{"id":"lap-1","perjumpaan_id":"pjp-1","tajuk_laporan":"Laporan Suaikenal, Pelantikan AJK & Asas Kawad Kaki","tarikh":"2026-02-11","masa":"2.30 Petang – 4.30 Petang","tempat":"Dataran Perhimpunan Sekolah","guru_penasihat":"Cikgu Naqiyuddin bin Abdullah","bil_hadir":11,"bil_keseluruhan":11,"objektif":"Memperkenalkan struktur organisasi KRSM serta melatih disiplin kawad kaki statik.","ringkasan":"Majlis suaikenal bermula dengan taklimat guru penasihat, pemilihan jawatankuasa, diikuti latihan kawad kaki asas.","impak_pencapaian":"Kadet menunjukkan semangat berpasukan yang tinggi dan mematuhi arahan baris dengan baik.","gambar_eviden":[]},{"id":"lap-2","perjumpaan_id":"pjp-2","tajuk_laporan":"Laporan Ikatan, Simpulan & Pertolongan Cemas Asas","tarikh":"2026-02-25","masa":"2.30 Petang – 4.30 Petang","tempat":"Dewan Terbuka & Padang","guru_penasihat":"Cikgu Naqiyuddin bin Abdullah","bil_hadir":10,"bil_keseluruhan":11,"objektif":"Menguasai simpulan asas tali dan prosedur rawatan luka ringan.","ringkasan":"Kadet dibahagikan kepada platun Banin dan Banat untuk amali buku sila, tindih kasih dan balutan anduh.","impak_pencapaian":"Semua kadet hadir berjaya menyiapkan tugasan amali dalam masa yang ditetapkan.","gambar_eviden":[]}],"krsm_takwim_list":[{"id":"tak-1","tarikh":"2026-02-11","aktiviti":"Mesyuarat Agung & Latihan Kawad #1","kategori":"Kawad","sasaran":"Semua Kadet KRSM","status":"Selesai"},{"id":"tak-2","tarikh":"2026-05-16","aktiviti":"Perkhemahan Unit Beruniform Sekolah","kategori":"Perkhemahan","sasaran":"Tingkatan 2 – 5","status":"Akan Datang"},{"id":"tak-3","tarikh":"2026-07-18","aktiviti":"Gotong-Royong & Khidmat Masyarakat Masjid","kategori":"Khidmat Masyarakat","sasaran":"Semua Kadet KRSM","status":"Akan Datang"}],"krsm_pencapaian_list":[{"id":"pen-1","tarikh":"2026-04-12","nama_pertandingan":"Pertandingan Kawad Kaki Unit Beruniform","peringkat":"Daerah","pencapaian":"Naib Johan Keseluruhan","peserta_terlibat":"Platun Banin & Banat KRSM"}],"krsm_school_profile":{"namaSekolah":"SM Al-Islah Sg. Petani","kodSekolah":"KEA3105","ppdNegeri":"Sungai Petani, Kedah","ketuaGuruPenasihat":"Cikgu Naqiyuddin bin Abdullah","pengetua":"Tuan Pengetua","tahunSesi":"2026","logoSekolah":""},"krsm_admin_accounts":[{"id":"adm-super-1","nama":"Super Admin 1 (Ketua Penyelaras KRSM)","emel":"superadmin1@alislah.edu.my","peranan":"Super Admin","pin":"1234","kelas_seliaan":"Semua Kelas (Banin & Banat)","aktif":true},{"id":"adm-super-2","nama":"Super Admin 2 (Penolong Penyelaras KRSM)","emel":"superadmin2@alislah.edu.my","peranan":"Super Admin","pin":"5678","kelas_seliaan":"Semua Kelas (Banin & Banat)","aktif":true},{"id":"adm-guru-1","nama":"Admin Guru 1 (Guru Penasihat)","emel":"admin.guru@alislah.edu.my","peranan":"Admin Guru","pin":"1111","kelas_seliaan":"Platun Banat","aktif":true}],"krsm_published_slug":"DigitalKrsmSMAI","krsm_is_published_live":"true"};
+      Object.keys(preset).forEach(function(k) {
+        if (!localStorage.getItem(k)) {
+          localStorage.setItem(k, typeof preset[k] === 'string' ? preset[k] : JSON.stringify(preset[k]));
+        }
+      });
+
+      const KELAS_RASMI = [{"nama":"1 TALHAH","tingkatan":1},{"nama":"1 ABU BAKAR","tingkatan":1},{"nama":"2 ABDURRAHMAN","tingkatan":2},{"nama":"2 ABU UBAIDAH","tingkatan":2},{"nama":"3 UMAR","tingkatan":3},{"nama":"3 USMAN","tingkatan":3},{"nama":"4 SAAD WAQAS","tingkatan":4},{"nama":"4 SAID SAIZ","tingkatan":4},{"nama":"5 ALI","tingkatan":5},{"nama":"5 AZZUBAIR","tingkatan":5}];
+
+      const state = {
+        tab: 'dashboard',
+        profile: JSON.parse(localStorage.getItem('krsm_school_profile') || '{}'),
+        admins: JSON.parse(localStorage.getItem('krsm_admin_accounts') || '[]'),
+        currentUserId: localStorage.getItem('krsm_current_user_id') || 'adm-super-1',
+        ahli: JSON.parse(localStorage.getItem('krsm_ahli_list') || '[]'),
+        perjumpaan: JSON.parse(localStorage.getItem('krsm_perjumpaan_list') || '[]'),
+        kehadiran: JSON.parse(localStorage.getItem('krsm_kehadiran_records') || '[]'),
+        laporan: JSON.parse(localStorage.getItem('krsm_laporan_list') || '[]'),
+        takwim: JSON.parse(localStorage.getItem('krsm_takwim_list') || '[]'),
+        pencapaian: JSON.parse(localStorage.getItem('krsm_pencapaian_list') || '[]'),
+        selectedPjpId: '',
+        selectedKelas: 'SEMUA',
+        selectedPlatun: 'SEMUA',
+        searchAhli: '',
+        sijilAhliId: null,
+        printLapId: null,
+        mobileOpen: false
+      };
+      if (state.perjumpaan.length > 0) {
+        state.selectedPjpId = state.perjumpaan[state.perjumpaan.length - 1].id;
+      }
+
+      function saveAll() {
+        localStorage.setItem('krsm_school_profile', JSON.stringify(state.profile));
+        localStorage.setItem('krsm_admin_accounts', JSON.stringify(state.admins));
+        localStorage.setItem('krsm_current_user_id', state.currentUserId);
+        localStorage.setItem('krsm_ahli_list', JSON.stringify(state.ahli));
+        localStorage.setItem('krsm_perjumpaan_list', JSON.stringify(state.perjumpaan));
+        localStorage.setItem('krsm_kehadiran_records', JSON.stringify(state.kehadiran));
+        localStorage.setItem('krsm_laporan_list', JSON.stringify(state.laporan));
+        localStorage.setItem('krsm_takwim_list', JSON.stringify(state.takwim));
+        localStorage.setItem('krsm_pencapaian_list', JSON.stringify(state.pencapaian));
+      }
+
+      function esc(str) {
+        return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+      }
+
+      function fmtDate(d) {
+        if (!d) return '—';
+        const p = d.split('-');
+        if (p.length !== 3) return d;
+        const b = ['Jan','Feb','Mac','Apr','Mei','Jun','Jul','Ogo','Sep','Okt','Nov','Dis'];
+        return parseInt(p[2],10) + ' ' + (b[parseInt(p[1],10)-1] || p[1]) + ' ' + p[0];
+      }
+
+      function currentUser() {
+        return state.admins.find(u => u.id === state.currentUserId) || state.admins[0] || { nama: 'Super Admin 1', peranan: 'Super Admin', pin: '1234' };
+      }
+
+      window.appAction = {
+        setTab(t) { state.tab = t; state.mobileOpen = false; render(); },
+        toggleMobile() { state.mobileOpen = !state.mobileOpen; render(); },
+        selectPjp(id) { state.selectedPjpId = id; render(); },
+        selectKelas(k) { state.selectedKelas = k; render(); },
+        selectPlatun(p) { state.selectedPlatun = p; render(); },
+        setSearch(v) { state.searchAhli = v; render(); },
+        exportAhliCSV() {
+          const headers = ['No Keahlian','Nama Penuh','No KP','Tingkatan','Kelas','Platun','Pangkat','Jawatan'];
+          const rows = state.ahli.map(a => [a.no_keahlian, '"' + a.nama_penuh + '"', a.no_kp, a.tingkatan, a.kelas, a.jantina, a.pangkat, a.jawatan]);
+          const csv = 'data:text/csv;charset=utf-8,' + [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+          const link = document.createElement('a');
+          link.setAttribute('href', encodeURI(csv));
+          link.setAttribute('download', 'Senarai_Ahli_DigitalKrsmSMAI_' + new Date().toISOString().slice(0,10) + '.csv');
+          document.body.appendChild(link); link.click(); document.body.removeChild(link);
+        },
+        exportPAJSKCSV() {
+          const totalSesi = state.perjumpaan.length;
+          const headers = ['No Keahlian','Nama Penuh','Kelas','Platun','Jawatan','Bil Hadir','Jumlah Sesi','Peratus (%)','Skor Hadir (40M)'];
+          const rows = state.ahli.map(a => {
+            const h = state.kehadiran.filter(k => k.ahli_id === a.id && k.status === 'Hadir').length;
+            const pct = totalSesi > 0 ? Math.round((h/totalSesi)*100) : 0;
+            const m = totalSesi > 0 ? Math.round((h/totalSesi)*40) : 0;
+            return [a.no_keahlian, '"' + a.nama_penuh + '"', a.kelas, a.jantina, a.jawatan, h, totalSesi, pct, m];
+          });
+          const csv = 'data:text/csv;charset=utf-8,' + [headers.join(','), ...rows.map(r => r.join(','))].join('\n');
+          const link = document.createElement('a');
+          link.setAttribute('href', encodeURI(csv));
+          link.setAttribute('download', 'Markah_PAJSK_DigitalKrsmSMAI_' + new Date().toISOString().slice(0,10) + '.csv');
+          document.body.appendChild(link); link.click(); document.body.removeChild(link);
+        },
+        setStatus(pjpId, ahliId, st) {
+          const idx = state.kehadiran.findIndex(k => k.perjumpaan_id === pjpId && k.ahli_id === ahliId);
+          if (idx >= 0) state.kehadiran[idx].status = st;
+          else state.kehadiran.push({ id: 'keh-' + Date.now(), perjumpaan_id: pjpId, ahli_id: ahliId, status: st, catatan: '' });
+          saveAll(); render();
+        },
+        setCatatan(pjpId, ahliId, val) {
+          const idx = state.kehadiran.findIndex(k => k.perjumpaan_id === pjpId && k.ahli_id === ahliId);
+          if (idx >= 0) state.kehadiran[idx].catatan = val;
+          else state.kehadiran.push({ id: 'keh-' + Date.now(), perjumpaan_id: pjpId, ahli_id: ahliId, status: 'Hadir', catatan: val });
+          saveAll();
+        },
+        markAllHadir() {
+          const filtered = state.ahli.filter(a => (state.selectedKelas === 'SEMUA' || a.kelas === state.selectedKelas) && (state.selectedPlatun === 'SEMUA' || a.jantina === state.selectedPlatun));
+          filtered.forEach(a => {
+            const idx = state.kehadiran.findIndex(k => k.perjumpaan_id === state.selectedPjpId && k.ahli_id === a.id);
+            if (idx >= 0) state.kehadiran[idx].status = 'Hadir';
+            else state.kehadiran.push({ id: 'keh-' + Date.now() + a.id, perjumpaan_id: state.selectedPjpId, ahli_id: a.id, status: 'Hadir', catatan: '' });
+          });
+          saveAll(); render();
+        },
+        addManualStudents(e) {
+          e.preventDefault();
+          const kls = document.getElementById('m-kelas').value;
+          const plt = document.getElementById('m-platun').value;
+          const raw = document.getElementById('m-names').value;
+          const lines = raw.split('\n').map(s => s.trim()).filter(Boolean);
+          if (!lines.length) return;
+          const kObj = KELAS_RASMI.find(x => x.nama === kls);
+          lines.forEach((nm, i) => {
+            state.ahli.unshift({
+              id: 'ahli-' + Date.now() + '-' + i,
+              no_keahlian: 'KRSM-' + (state.profile.tahunSesi || '2026') + '-' + String(state.ahli.length + 1).padStart(3, '0'),
+              nama_penuh: nm,
+              no_kp: '—',
+              tingkatan: kObj ? kObj.tingkatan : 1,
+              kelas: kls,
+              jantina: plt,
+              pangkat: 'Kadet',
+              jawatan: 'Ahli Biasa',
+              no_tel_waris: '—',
+              status: 'Aktif'
+            });
+          });
+          document.getElementById('modal-add-student').classList.add('hidden');
+          saveAll(); render();
+        },
+        deleteAhli(id) {
+          if (currentUser().peranan !== 'Super Admin') return;
+          state.ahli = state.ahli.filter(a => a.id !== id);
+          state.kehadiran = state.kehadiran.filter(k => k.ahli_id !== id);
+          saveAll(); render();
+        },
+        addNewPjp(e) {
+          e.preventDefault();
+          const tajuk = document.getElementById('p-tajuk').value.trim();
+          const tarikh = document.getElementById('p-tarikh').value;
+          const tempat = document.getElementById('p-tempat').value.trim();
+          if (!tajuk || !tarikh) return;
+          const np = {
+            id: 'pjp-' + Date.now(),
+            bil_perjumpaan: state.perjumpaan.length + 1,
+            tajuk,
+            tarikh,
+            masa: '2.30 Petang – 4.30 Petang',
+            tempat: tempat || 'Dataran Perhimpunan Sekolah',
+            catatan: ''
+          };
+          state.perjumpaan.push(np);
+          state.ahli.forEach(a => {
+            state.kehadiran.push({ id: 'keh-' + np.id + '-' + a.id, perjumpaan_id: np.id, ahli_id: a.id, status: 'Hadir', catatan: '' });
+          });
+          state.selectedPjpId = np.id;
+          document.getElementById('modal-new-pjp').classList.add('hidden');
+          saveAll(); render();
+        },
+        addLaporan(e) {
+          e.preventDefault();
+          const tajuk = document.getElementById('l-tajuk').value.trim();
+          const tarikh = document.getElementById('l-tarikh').value;
+          const tempat = document.getElementById('l-tempat').value.trim();
+          const objektif = document.getElementById('l-objektif').value.trim();
+          const ringkasan = document.getElementById('l-ringkasan').value.trim();
+          const impak = document.getElementById('l-impak').value.trim();
+          if (!tajuk) return;
+          const hadirCount = state.kehadiran.filter(k => k.perjumpaan_id === state.selectedPjpId && k.status === 'Hadir').length;
+          state.laporan.unshift({
+            id: 'lap-' + Date.now(),
+            perjumpaan_id: state.selectedPjpId,
+            tajuk_laporan: tajuk,
+            tarikh: tarikh || new Date().toISOString().slice(0,10),
+            masa: '2.30 Petang – 4.30 Petang',
+            tempat: tempat || 'Dataran Perhimpunan Sekolah',
+            guru_penasihat: state.profile.ketuaGuruPenasihat || 'Guru Penasihat',
+            bil_hadir: hadirCount || state.ahli.length,
+            bil_keseluruhan: state.ahli.length,
+            objektif: objektif || 'Meningkatkan disiplin dan kemahiran asas kadet KRSM.',
+            ringkasan: ringkasan || 'Aktiviti dilaksanakan mengikut jadual dengan penyertaan aktif kadet Banin dan Banat.',
+            impak_pencapaian: impak || 'Objektif perjumpaan tercapai dengan cemerlang.',
+            gambar_eviden: []
+          });
+          document.getElementById('modal-new-lap').classList.add('hidden');
+          saveAll(); render();
+        },
+        deleteLaporan(id) {
+          if (currentUser().peranan !== 'Super Admin') return;
+          state.laporan = state.laporan.filter(l => l.id !== id);
+          saveAll(); render();
+        },
+        addTakwim(e) {
+          e.preventDefault();
+          const tarikh = document.getElementById('tk-tarikh').value;
+          const aktiviti = document.getElementById('tk-aktiviti').value.trim();
+          const kategori = document.getElementById('tk-kat').value;
+          if (!aktiviti) return;
+          state.takwim.unshift({ id: 'tak-' + Date.now(), tarikh, aktiviti, kategori, sasaran: 'Semua Kadet KRSM', status: 'Akan Datang' });
+          saveAll(); render();
+        },
+        toggleTakwim(id) {
+          state.takwim = state.takwim.map(t => t.id === id ? Object.assign({}, t, { status: t.status === 'Selesai' ? 'Akan Datang' : 'Selesai' }) : t);
+          saveAll(); render();
+        },
+        addPencapaian(e) {
+          e.preventDefault();
+          const tarikh = document.getElementById('pn-tarikh').value;
+          const nama = document.getElementById('pn-nama').value.trim();
+          const pencapaian = document.getElementById('pn-capai').value.trim();
+          if (!nama || !pencapaian) return;
+          state.pencapaian.unshift({ id: 'pen-' + Date.now(), tarikh, nama_pertandingan: nama, peringkat: 'Daerah', pencapaian, peserta_terlibat: 'Platun Banin & Banat KRSM' });
+          saveAll(); render();
+        },
+        uploadLogo(input) {
+          const file = input.files && input.files[0];
+          if (!file) return;
+          const r = new FileReader();
+          r.onload = function() {
+            state.profile.logoSekolah = r.result;
+            saveAll(); render();
+          };
+          r.readAsDataURL(file);
+        },
+        openSijil(id) { state.sijilAhliId = id; render(); },
+        closeSijil() { state.sijilAhliId = null; render(); },
+        openPrintLap(id) { state.printLapId = id; render(); },
+        closePrintLap() { state.printLapId = null; render(); },
+        switchUser(id) { state.currentUserId = id; saveAll(); render(); },
+        saveProfile(e) {
+          e.preventDefault();
+          state.profile.namaSekolah = document.getElementById('pr-nama').value;
+          state.profile.kodSekolah = document.getElementById('pr-kod').value;
+          state.profile.ppdNegeri = document.getElementById('pr-ppd').value;
+          state.profile.ketuaGuruPenasihat = document.getElementById('pr-guru').value;
+          state.profile.pengetua = document.getElementById('pr-pengetua').value;
+          saveAll(); render();
+        },
+        addAdmin(e) {
+          e.preventDefault();
+          if (currentUser().peranan !== 'Super Admin') return;
+          const nama = document.getElementById('ad-nama').value.trim();
+          const peranan = document.getElementById('ad-role').value;
+          const pin = document.getElementById('ad-pin').value.trim() || '1234';
+          if (!nama) return;
+          state.admins.push({ id: 'adm-' + Date.now(), nama, emel: 'guru@alislah.edu.my', peranan, pin, kelas_seliaan: 'Semua Kelas', aktif: true });
+          saveAll(); render();
+        },
+        deleteAdmin(id) {
+          if (currentUser().peranan !== 'Super Admin' || state.admins.length <= 1) return;
+          state.admins = state.admins.filter(a => a.id !== id);
+          saveAll(); render();
+        },
+        downloadBackup() {
+          const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
+          const u = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = u;
+          a.download = 'Sandaran_DigitalKrsmSMAI_' + new Date().toISOString().slice(0,10) + '.json';
+          a.click();
+          URL.revokeObjectURL(u);
+        },
+        restoreBackup(input) {
+          const file = input.files && input.files[0];
+          if (!file) return;
+          const r = new FileReader();
+          r.onload = function() {
+            try {
+              const d = JSON.parse(r.result);
+              if (Array.isArray(d.ahli || d.ahliList)) state.ahli = d.ahli || d.ahliList;
+              if (Array.isArray(d.perjumpaan || d.perjumpaanList)) state.perjumpaan = d.perjumpaan || d.perjumpaanList;
+              if (Array.isArray(d.kehadiran || d.kehadiranRecords)) state.kehadiran = d.kehadiran || d.kehadiranRecords;
+              if (Array.isArray(d.laporan || d.laporanList)) state.laporan = d.laporan || d.laporanList;
+              if (Array.isArray(d.takwim || d.takwimList)) state.takwim = d.takwim || d.takwimList;
+              if (Array.isArray(d.pencapaian || d.pencapaianList)) state.pencapaian = d.pencapaian || d.pencapaianList;
+              if (d.profile || d.schoolProfile) state.profile = d.profile || d.schoolProfile;
+              if (Array.isArray(d.admins || d.adminAccounts)) state.admins = d.admins || d.adminAccounts;
+              saveAll(); render();
+            } catch(err) {}
+          };
+          r.readAsText(file);
+        }
+      };
+
+      function render() {
+        const user = currentUser();
+        const isSuper = user.peranan === 'Super Admin';
+        const baninCount = state.ahli.filter(a => a.jantina === 'Banin').length;
+        const banatCount = state.ahli.filter(a => a.jantina === 'Banat').length;
+        const totalHadir = state.kehadiran.filter(k => k.status === 'Hadir').length;
+        const maxPossible = state.perjumpaan.length * state.ahli.length;
+        const pctAll = maxPossible > 0 ? Math.min(100, Math.round((totalHadir / maxPossible) * 100)) : 0;
+
+        const navs = [
+          { id: 'dashboard', label: 'Dashboard' },
+          { id: 'ahli', label: 'Senarai Ahli' },
+          { id: 'kehadiran', label: 'Kehadiran' },
+          { id: 'laporan', label: 'Laporan Aktiviti' },
+          { id: 'pajsk', label: 'PAJSK & Sijil' },
+          { id: 'takwim', label: 'Takwim & Kejayaan' },
+          { id: 'profil', label: 'Profil & Admin' }
+        ];
+
+        const logoHtml = state.profile.logoSekolah
+          ? '<div class="w-14 h-14 rounded-xl bg-white p-1 flex items-center justify-center shrink-0 overflow-hidden"><img src="' + state.profile.logoSekolah + '" class="w-full h-full object-contain" /></div>'
+          : '<div class="w-14 h-14 rounded-xl bg-white/10 border border-[#F2C94C] flex items-center justify-center text-xs font-bold text-[#F2C94C]">KRSM</div>';
+
+        let mainContent = '';
+
+        if (state.tab === 'dashboard') {
+          mainContent = `
+            <div class="space-y-6">
+              <div class="bg-gradient-to-r from-[#701F32] via-[#7f243a] to-[#581626] rounded-2xl p-6 text-white shadow-lg flex flex-wrap items-center justify-between gap-4">
+                <div>
+                  <span class="px-3 py-1 rounded-full bg-white/10 text-[#F2C94C] text-xs font-bold">Dashboard Pentadbiran Kokurikulum</span>
+                  <h2 class="text-2xl font-bold mt-2">${esc(state.profile.namaSekolah)}</h2>
+                  <p class="text-xs text-rose-100 mt-1">Selamat datang, ${esc(state.profile.ketuaGuruPenasihat)}. Pantau rekod keahlian Banin & Banat, kehadiran mingguan, laporan aktiviti dan markah PAJSK KRSM.</p>
+                </div>
+                <div class="flex gap-2">
+                  <button onclick="document.getElementById('modal-new-pjp').classList.remove('hidden')" class="px-4 py-2.5 rounded-xl bg-[#F2C94C] text-[#701F32] font-bold text-xs">+ Sesi Perjumpaan</button>
+                  <button onclick="document.getElementById('modal-new-lap').classList.remove('hidden')" class="px-4 py-2.5 rounded-xl bg-[#28734B] text-white font-bold text-xs">+ Bina Laporan</button>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 lg:grid-cols-5 gap-4">
+                <div class="bg-white p-5 rounded-2xl border border-slate-200"><div class="text-xs text-slate-500">Jumlah Ahli</div><div class="text-2xl font-bold mt-1">${state.ahli.length}</div><div class="text-[11px] text-slate-500 mt-1">Banin: <b>${baninCount}</b> • Banat: <b>${banatCount}</b></div></div>
+                <div class="bg-white p-5 rounded-2xl border border-slate-200"><div class="text-xs text-slate-500">Jumlah Perjumpaan</div><div class="text-2xl font-bold mt-1">${state.perjumpaan.length}</div><div class="text-[11px] text-slate-500 mt-1">Sesi direkod</div></div>
+                <div class="bg-white p-5 rounded-2xl border border-slate-200"><div class="text-xs text-slate-500">Peratus Kehadiran</div><div class="text-2xl font-bold text-[#28734B] mt-1">${pctAll}%</div><div class="text-[11px] text-slate-500 mt-1">Purata keseluruhan</div></div>
+                <div class="bg-white p-5 rounded-2xl border border-slate-200"><div class="text-xs text-slate-500">Laporan Aktiviti</div><div class="text-2xl font-bold mt-1">${state.laporan.length}</div><div class="text-[11px] text-slate-500 mt-1">Dokumentasi rasmi</div></div>
+                <div class="bg-white p-5 rounded-2xl border border-slate-200"><div class="text-xs text-slate-500">Akses Semasa</div><div class="text-sm font-bold text-[#701F32] mt-2">${esc(user.peranan)}</div><div class="text-[11px] text-slate-500 mt-1 truncate">${esc(user.nama)}</div></div>
+              </div>
+
+              <div class="bg-white rounded-2xl p-6 border border-slate-200">
+                <h3 class="font-bold text-base mb-4">Taburan Keahlian Mengikut 10 Kelas Rasmi</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-5 gap-2.5">
+                  ${KELAS_RASMI.map(k => {
+                    const cnt = state.ahli.filter(a => a.kelas === k.nama).length;
+                    return '<div class="p-3 rounded-xl bg-slate-50 border border-slate-200 text-center"><div class="text-lg font-bold text-[#701F32]">' + cnt + '</div><div class="text-[10px] font-bold text-slate-600 mt-0.5">' + k.nama + '</div></div>';
+                  }).join('')}
+                </div>
+              </div>
+            </div>`;
+        } else if (state.tab === 'ahli') {
+          const list = state.ahli.filter(a => a.nama_penuh.toLowerCase().includes(state.searchAhli.toLowerCase()) || a.kelas.toLowerCase().includes(state.searchAhli.toLowerCase()));
+          mainContent = `
+            <div class="space-y-5">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <div><h2 class="text-2xl font-bold">Direktori Ahli & Kadet KRSM</h2><p class="text-sm text-slate-500">Senarai penuh kadet Banin & Banat merentasi 10 kelas rasmi</p></div>
+                <div class="flex gap-2">
+                  <button onclick="appAction.exportAhliCSV()" class="px-4 py-2.5 rounded-xl bg-white border border-slate-200 text-slate-700 text-xs font-bold">Eksport CSV</button>
+                  <button onclick="document.getElementById('modal-add-student').classList.remove('hidden')" class="px-4 py-2.5 rounded-xl bg-[#701F32] text-white text-xs font-bold">+ Tambah Pelajar Manual</button>
+                </div>
+              </div>
+              <div class="bg-white p-4 rounded-2xl border border-slate-200">
+                <input type="text" value="${esc(state.searchAhli)}" oninput="appAction.setSearch(this.value)" placeholder="Cari nama pelajar atau kelas..." class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs" />
+              </div>
+              <div class="bg-white rounded-2xl border border-slate-200 overflow-x-auto">
+                <table class="w-full text-left text-xs">
+                  <thead class="bg-slate-50 border-b text-slate-500 uppercase">
+                    <tr><th class="p-3.5">No. Ahli</th><th class="p-3.5">Nama Penuh</th><th class="p-3.5">Kelas</th><th class="p-3.5">Platun</th><th class="p-3.5">Pangkat & Jawatan</th>${isSuper ? '<th class="p-3.5 text-right">Padam</th>' : ''}</tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-100">
+                    ${list.map(a => `
+                      <tr>
+                        <td class="p-3.5 font-bold text-[#701F32]">${esc(a.no_keahlian)}</td>
+                        <td class="p-3.5 font-semibold text-slate-900">${esc(a.nama_penuh)}</td>
+                        <td class="p-3.5"><span class="px-2 py-1 rounded bg-slate-100 font-semibold">${esc(a.kelas)}</span></td>
+                        <td class="p-3.5"><span class="px-2 py-0.5 rounded-full font-semibold ${a.jantina === 'Banin' ? 'bg-sky-100 text-sky-800' : 'bg-rose-100 text-[#701F32]'}">${esc(a.jantina)}</span></td>
+                        <td class="p-3.5">${esc(a.pangkat)} • ${esc(a.jawatan)}</td>
+                        ${isSuper ? '<td class="p-3.5 text-right"><button onclick="appAction.deleteAhli(\'' + a.id + '\')" class="px-2.5 py-1 rounded bg-red-50 text-red-600 font-semibold">Padam</button></td>' : ''}
+                      </tr>
+                    `).join('')}
+                  </tbody>
+                </table>
+              </div>
+            </div>`;
+        } else if (state.tab === 'kehadiran') {
+          const activePjp = state.perjumpaan.find(p => p.id === state.selectedPjpId) || state.perjumpaan[0];
+          const filtered = state.ahli.filter(a => (state.selectedKelas === 'SEMUA' || a.kelas === state.selectedKelas) && (state.selectedPlatun === 'SEMUA' || a.jantina === state.selectedPlatun));
+          mainContent = `
+            <div class="space-y-5">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <div><h2 class="text-2xl font-bold">Rekod & Semakan Kehadiran Kadet</h2><p class="text-sm text-slate-500">Pilih tarikh perjumpaan dan semak kehadiran mengikut kelas</p></div>
+                <div class="flex gap-2">
+                  <button onclick="document.getElementById('modal-add-student').classList.remove('hidden')" class="px-4 py-2.5 rounded-xl bg-[#28734B] text-white text-xs font-bold">+ Tambah Pelajar</button>
+                  <button onclick="document.getElementById('modal-new-pjp').classList.remove('hidden')" class="px-4 py-2.5 rounded-xl bg-[#701F32] text-white text-xs font-bold">+ Tarikh Perjumpaan</button>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-2xl border border-slate-200 overflow-x-auto">
+                <table class="w-full text-left text-xs">
+                  <thead class="bg-slate-50 border-b text-slate-500 uppercase"><tr><th class="p-3">Bil</th><th class="p-3">Tarikh</th><th class="p-3">Tajuk Aktiviti</th><th class="p-3 text-center">Hadir</th></tr></thead>
+                  <tbody class="divide-y divide-slate-100">
+                    ${state.perjumpaan.map(p => {
+                      const h = state.kehadiran.filter(k => k.perjumpaan_id === p.id && k.status === 'Hadir').length;
+                      const sel = activePjp && activePjp.id === p.id;
+                      return '<tr onclick="appAction.selectPjp(\'' + p.id + '\')" class="cursor-pointer ' + (sel ? 'bg-[#701F32]/10 font-bold' : 'hover:bg-slate-50') + '"><td class="p-3 text-[#701F32]">#' + p.bil_perjumpaan + '</td><td class="p-3">' + fmtDate(p.tarikh) + '</td><td class="p-3">' + esc(p.tajuk) + '</td><td class="p-3 text-center text-[#28734B]">' + h + '/' + state.ahli.length + '</td></tr>';
+                    }).join('')}
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="bg-white p-4 rounded-2xl border border-slate-200 space-y-3">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <select onchange="appAction.selectPlatun(this.value)" class="px-3 py-2 rounded-xl border text-xs font-semibold">
+                    <option value="SEMUA" ${state.selectedPlatun==='SEMUA'?'selected':''}>Semua Platun (Banin & Banat)</option>
+                    <option value="Banin" ${state.selectedPlatun==='Banin'?'selected':''}>Platun Banin</option>
+                    <option value="Banat" ${state.selectedPlatun==='Banat'?'selected':''}>Platun Banat</option>
+                  </select>
+                  <button onclick="appAction.markAllHadir()" class="px-3.5 py-2 rounded-xl bg-emerald-50 text-[#28734B] border border-[#28734B]/20 text-xs font-bold">Tanda Semua Hadir (${filtered.length})</button>
+                </div>
+                <div class="flex flex-wrap gap-1.5">
+                  <button onclick="appAction.selectKelas('SEMUA')" class="px-3 py-1.5 rounded-lg text-xs font-bold ${state.selectedKelas==='SEMUA'?'bg-[#701F32] text-white':'bg-slate-100 text-slate-700'}">SEMUA (${state.ahli.length})</button>
+                  ${KELAS_RASMI.map(k => {
+                    const cnt = state.ahli.filter(a => a.kelas === k.nama).length;
+                    return '<button onclick="appAction.selectKelas(\'' + k.nama + '\')" class="px-3 py-1.5 rounded-lg text-xs font-semibold ' + (state.selectedKelas===k.nama?'bg-[#701F32] text-white':'bg-slate-100 text-slate-700') + '">' + k.nama + ' (' + cnt + ')</button>';
+                  }).join('')}
+                </div>
+              </div>
+
+              <div class="bg-white rounded-2xl border border-slate-200 overflow-x-auto">
+                <table class="w-full text-left text-xs">
+                  <thead class="bg-slate-50 border-b text-slate-500 uppercase"><tr><th class="p-3">Bil</th><th class="p-3">Nama Pelajar</th><th class="p-3">Kelas & Platun</th><th class="p-3">Status</th><th class="p-3">Catatan</th>${isSuper ? '<th class="p-3 text-right">Padam</th>' : ''}</tr></thead>
+                  <tbody class="divide-y divide-slate-100">
+                    ${filtered.map((a, idx) => {
+                      const rec = state.kehadiran.find(k => k.perjumpaan_id === (activePjp && activePjp.id) && k.ahli_id === a.id) || { status: 'Hadir', catatan: '' };
+                      return `
+                        <tr>
+                          <td class="p-3">${idx+1}</td>
+                          <td class="p-3 font-semibold">${esc(a.nama_penuh)}</td>
+                          <td class="p-3">${esc(a.kelas)} • <b>${esc(a.jantina)}</b></td>
+                          <td class="p-3">
+                            <div class="inline-flex rounded-lg bg-slate-100 p-1 gap-1">
+                              ${['Hadir','Bersebab','Tidak Hadir'].map(st => {
+                                const act = rec.status === st;
+                                const cls = act ? (st==='Hadir'?'bg-[#28734B] text-white':st==='Bersebab'?'bg-amber-500 text-white':'bg-red-600 text-white') : 'text-slate-600';
+                                return '<button onclick="appAction.setStatus(\'' + (activePjp && activePjp.id) + '\',\'' + a.id + '\',\'' + st + '\')" class="px-2.5 py-1 rounded text-xs font-semibold ' + cls + '">' + st + '</button>';
+                              }).join('')}
+                            </div>
+                          </td>
+                          <td class="p-3"><input type="text" value="${esc(rec.catatan)}" onchange="appAction.setCatatan('${activePjp && activePjp.id}','${a.id}',this.value)" placeholder="Catatan..." class="px-2 py-1 rounded border text-xs" /></td>
+                          ${isSuper ? '<td class="p-3 text-right"><button onclick="appAction.deleteAhli(\'' + a.id + '\')" class="px-2 py-1 rounded bg-red-50 text-red-600 font-semibold">Padam</button></td>' : ''}
+                        </tr>
+                      `;
+                    }).join('')}
+                  </tbody>
+                </table>
+              </div>
+            </div>`;
+        } else if (state.tab === 'laporan') {
+          mainContent = `
+            <div class="space-y-5">
+              <div class="flex items-center justify-between">
+                <div><h2 class="text-2xl font-bold">Dokumentasi & Laporan Aktiviti</h2><p class="text-sm text-slate-500">Laporan mingguan rasmi KRSM sedia untuk cetakan</p></div>
+                <button onclick="document.getElementById('modal-new-lap').classList.remove('hidden')" class="px-4 py-2.5 rounded-xl bg-[#28734B] text-white text-xs font-bold">+ Bina Laporan Baharu</button>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                ${state.laporan.map(l => `
+                  <div class="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between space-y-4">
+                    <div class="space-y-2">
+                      <div class="flex justify-between text-xs"><span class="px-2.5 py-0.5 rounded-full bg-[#701F32]/10 text-[#701F32] font-bold">${fmtDate(l.tarikh)}</span><span class="px-2.5 py-0.5 rounded-full bg-[#28734B]/10 text-[#28734B] font-bold">Hadir: ${l.bil_hadir}/${l.bil_keseluruhan}</span></div>
+                      <h3 class="font-bold text-base">${esc(l.tajuk_laporan)}</h3>
+                      <p class="text-xs text-slate-600">${esc(l.ringkasan)}</p>
+                    </div>
+                    <div class="flex items-center justify-between pt-2 border-t border-slate-100">
+                      ${isSuper ? '<button onclick="appAction.deleteLaporan(\'' + l.id + '\')" class="text-xs font-semibold text-red-600">Padam</button>' : '<span></span>'}
+                      <button onclick="appAction.openPrintLap('${l.id}')" class="px-4 py-2 rounded-xl bg-[#701F32] text-white text-xs font-bold">Papar & Cetak Rasmi</button>
+                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>`;
+        } else if (state.tab === 'pajsk') {
+          const totalSesi = state.perjumpaan.length;
+          mainContent = `
+            <div class="space-y-5">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <div><h2 class="text-2xl font-bold">Rekod PAJSK & Sijil Digital Kadet</h2><p class="text-sm text-slate-500">Skor kehadiran (40M), jawatan (10M) & cetakan sijil rasmi berlogo sekolah</p></div>
+                <button onclick="appAction.exportPAJSKCSV()" class="px-4 py-2.5 rounded-xl bg-[#28734B] text-white text-xs font-bold">Eksport PAJSK (.CSV)</button>
+              </div>
+              <div class="bg-white rounded-2xl border border-slate-200 overflow-x-auto">
+                <table class="w-full text-left text-xs">
+                  <thead class="bg-slate-50 border-b text-slate-500 uppercase"><tr><th class="p-3.5">Nama Kadet</th><th class="p-3.5">Kelas</th><th class="p-3.5">Jawatan</th><th class="p-3.5 text-center">Kehadiran</th><th class="p-3.5 text-center">Skor (40M)</th><th class="p-3.5 text-right">Sijil</th></tr></thead>
+                  <tbody class="divide-y divide-slate-100">
+                    ${state.ahli.map(a => {
+                      const h = state.kehadiran.filter(k => k.ahli_id === a.id && k.status === 'Hadir').length;
+                      const pct = totalSesi > 0 ? Math.round((h/totalSesi)*100) : 0;
+                      const m = totalSesi > 0 ? Math.round((h/totalSesi)*40) : 0;
+                      return '<tr><td class="p-3.5 font-semibold">' + esc(a.nama_penuh) + '</td><td class="p-3.5">' + esc(a.kelas) + '</td><td class="p-3.5">' + esc(a.jawatan) + '</td><td class="p-3.5 text-center">' + h + '/' + totalSesi + ' (' + pct + '%)</td><td class="p-3.5 text-center font-bold text-[#28734B]">' + m + '/40</td><td class="p-3.5 text-right"><button onclick="appAction.openSijil(\'' + a.id + '\')" class="px-3 py-1.5 rounded-xl bg-[#701F32] text-white font-bold">Jana Sijil</button></td></tr>';
+                    }).join('')}
+                  </tbody>
+                </table>
+              </div>
+            </div>`;
+        } else if (state.tab === 'takwim') {
+          mainContent = `
+            <div class="space-y-6">
+              <div><h2 class="text-2xl font-bold">Takwim Tahunan & Rekod Kejayaan</h2><p class="text-sm text-slate-500">Perancangan aktiviti tahunan & pencapaian pasukan KRSM</p></div>
+              <div class="bg-white rounded-2xl border border-slate-200 p-6 space-y-4">
+                <h3 class="font-bold text-base text-[#701F32]">Takwim Aktiviti KRSM</h3>
+                <form onsubmit="appAction.addTakwim(event)" class="grid grid-cols-1 sm:grid-cols-4 gap-2 bg-slate-50 p-3.5 rounded-xl border">
+                  <input id="tk-tarikh" type="date" value="${new Date().toISOString().slice(0,10)}" class="px-3 py-2 rounded-lg border text-xs bg-white" />
+                  <input id="tk-aktiviti" required placeholder="Nama aktiviti / program..." class="px-3 py-2 rounded-lg border text-xs bg-white" />
+                  <select id="tk-kat" class="px-3 py-2 rounded-lg border text-xs bg-white"><option value="Kawad">Kawad</option><option value="Perkhemahan">Perkhemahan</option><option value="Mesyuarat">Mesyuarat</option><option value="Pertandingan">Pertandingan</option></select>
+                  <button type="submit" class="px-4 py-2 rounded-lg bg-[#701F32] text-white text-xs font-bold">+ Tambah Takwim</button>
+                </form>
+                ${state.takwim.map(t => '<div class="p-3.5 rounded-xl bg-slate-50 border flex justify-between items-center"><div><div class="text-xs font-bold text-[#701F32]">' + fmtDate(t.tarikh) + ' • ' + esc(t.kategori) + '</div><div class="text-sm font-semibold">' + esc(t.aktiviti) + '</div></div><button onclick="appAction.toggleTakwim(\'' + t.id + '\')" class="px-3 py-1 rounded-full text-xs font-bold ' + (t.status==='Selesai'?'bg-[#28734B]/15 text-[#28734B]':'bg-amber-100 text-amber-800') + '">' + esc(t.status) + '</button></div>').join('')}
+              </div>
+
+              <div class="bg-white rounded-2xl border border-slate-200 p-6 space-y-4">
+                <h3 class="font-bold text-base text-[#28734B]">Rekod Kejayaan & Pertandingan</h3>
+                <form onsubmit="appAction.addPencapaian(event)" class="grid grid-cols-1 sm:grid-cols-4 gap-2 bg-slate-50 p-3.5 rounded-xl border">
+                  <input id="pn-tarikh" type="date" value="${new Date().toISOString().slice(0,10)}" class="px-3 py-2 rounded-lg border text-xs bg-white" />
+                  <input id="pn-nama" required placeholder="Nama pertandingan..." class="px-3 py-2 rounded-lg border text-xs bg-white" />
+                  <input id="pn-capai" required placeholder="Pencapaian (cth: Johan)..." class="px-3 py-2 rounded-lg border text-xs bg-white" />
+                  <button type="submit" class="px-4 py-2 rounded-lg bg-[#28734B] text-white text-xs font-bold">+ Rekod Kejayaan</button>
+                </form>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  ${state.pencapaian.map(p => '<div class="p-4 rounded-xl border bg-slate-50 space-y-1"><div class="text-xs font-bold text-[#701F32]">' + fmtDate(p.tarikh) + ' • Peringkat ' + esc(p.peringkat) + '</div><div class="font-bold text-sm">' + esc(p.pencapaian) + '</div><div class="text-xs text-slate-600">' + esc(p.nama_pertandingan) + '</div></div>').join('')}
+                </div>
+              </div>
+            </div>`;
+        } else if (state.tab === 'profil') {
+          mainContent = `
+            <div class="max-w-4xl space-y-6">
+              <div><h2 class="text-2xl font-bold">Profil Sekolah, 2 Super Admin & Admin Guru</h2><p class="text-sm text-slate-500">Urus akaun pentadbir, logo original sekolah dan tetapan rasmi</p></div>
+              <div class="bg-white rounded-2xl border border-slate-200 p-6 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <h3 class="font-bold text-base">Tukar Akaun Aktif (2 Super Admin / Admin Guru)</h3>
+                  <div class="flex flex-wrap gap-2">
+                    ${state.admins.map(ad => '<button onclick="appAction.switchUser(\'' + ad.id + '\')" class="px-3 py-1.5 rounded-xl text-xs font-bold ' + (ad.id===state.currentUserId?'bg-[#701F32] text-white':'bg-slate-100 text-slate-700') + '">' + esc(ad.peranan) + ': ' + esc(ad.nama.split('(')[0].trim()) + '</button>').join('')}
+                  </div>
+                </div>
+                ${isSuper ? `
+                  <form onsubmit="appAction.addAdmin(event)" class="grid grid-cols-1 sm:grid-cols-4 gap-2 bg-slate-50 p-3.5 rounded-xl border">
+                    <input id="ad-nama" required placeholder="Nama Guru / Pentadbir..." class="sm:col-span-2 px-3 py-2 rounded-lg border text-xs bg-white" />
+                    <select id="ad-role" class="px-3 py-2 rounded-lg border text-xs bg-white font-semibold"><option value="Admin Guru">Admin Guru</option><option value="Super Admin">Super Admin</option></select>
+                    <div class="flex gap-1.5"><input id="ad-pin" value="2026" maxlength="6" class="w-20 px-2.5 py-2 rounded-lg border text-xs bg-white font-mono" /><button type="submit" class="flex-1 px-3 py-2 rounded-lg bg-[#701F32] text-white text-xs font-bold">+ Tambah</button></div>
+                  </form>
+                ` : ''}
+                <div class="overflow-x-auto">
+                  <table class="w-full text-left text-xs">
+                    <thead class="bg-slate-50 border-b text-slate-500"><tr><th class="p-2.5">Nama</th><th class="p-2.5">Peranan</th><th class="p-2.5">PIN</th><th class="p-2.5 text-right">Tindakan</th></tr></thead>
+                    <tbody class="divide-y">
+                      ${state.admins.map(ad => '<tr><td class="p-2.5 font-semibold">' + esc(ad.nama) + '</td><td class="p-2.5">' + esc(ad.peranan) + '</td><td class="p-2.5 font-mono">' + (isSuper ? esc(ad.pin) : '••••') + '</td><td class="p-2.5 text-right">' + (isSuper && ad.id !== state.currentUserId ? '<button onclick="appAction.deleteAdmin(\'' + ad.id + '\')" class="text-red-600 font-semibold">Padam</button>' : '') + '</td></tr>').join('')}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <form onsubmit="appAction.saveProfile(event)" class="bg-white rounded-2xl border border-slate-200 p-6 space-y-4">
+                <div class="flex items-center justify-between p-4 rounded-xl bg-slate-50 border">
+                  <div class="flex items-center gap-3">
+                    ${logoHtml}
+                    <div><div class="text-xs font-bold">Logo Original Sekolah</div><div class="text-[11px] text-slate-500">Dipaparkan pada bar sisi kiri dan sijil rasmi</div></div>
+                  </div>
+                  <label class="px-3.5 py-2 rounded-xl bg-[#701F32] text-white text-xs font-bold cursor-pointer">Tukar Logo<input type="file" accept="image/*" onchange="appAction.uploadLogo(this)" class="hidden" /></label>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div><label class="block text-xs font-semibold mb-1">Nama Sekolah</label><input id="pr-nama" value="${esc(state.profile.namaSekolah)}" class="w-full px-3.5 py-2 rounded-xl border text-sm font-semibold" /></div>
+                  <div><label class="block text-xs font-semibold mb-1">Kod Sekolah</label><input id="pr-kod" value="${esc(state.profile.kodSekolah)}" class="w-full px-3.5 py-2 rounded-xl border text-sm" /></div>
+                  <div><label class="block text-xs font-semibold mb-1">PPD / Negeri</label><input id="pr-ppd" value="${esc(state.profile.ppdNegeri)}" class="w-full px-3.5 py-2 rounded-xl border text-sm" /></div>
+                  <div><label class="block text-xs font-semibold mb-1">Ketua Guru Penasihat</label><input id="pr-guru" value="${esc(state.profile.ketuaGuruPenasihat)}" class="w-full px-3.5 py-2 rounded-xl border text-sm" /></div>
+                  <div class="sm:col-span-2"><label class="block text-xs font-semibold mb-1">Pengetua Sekolah</label><input id="pr-pengetua" value="${esc(state.profile.pengetua)}" class="w-full px-3.5 py-2 rounded-xl border text-sm" /></div>
+                </div>
+                <button type="submit" class="px-5 py-2.5 rounded-xl bg-[#701F32] text-white text-xs font-bold">Simpan Profil Sekolah</button>
+              </form>
+            </div>`;
+        }
+
+        let overlayModals = '';
+        if (state.sijilAhliId) {
+          const sa = state.ahli.find(a => a.id === state.sijilAhliId);
+          if (sa) {
+            const h = state.kehadiran.filter(k => k.ahli_id === sa.id && k.status === 'Hadir').length;
+            const tot = state.perjumpaan.length;
+            const pct = tot > 0 ? Math.round((h/tot)*100) : 100;
+            overlayModals = `
+              <div class="fixed inset-0 z-50 bg-slate-900/70 flex items-center justify-center p-4">
+                <div class="bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl">
+                  <div class="no-print px-6 py-3.5 bg-slate-800 text-white flex justify-between items-center">
+                    <span class="text-xs font-bold">Pratonton Sijil Penghargaan KRSM</span>
+                    <div class="flex gap-2">
+                      <button onclick="window.print()" class="px-4 py-1.5 rounded-lg bg-[#28734B] text-white text-xs font-bold">Cetak Sijil</button>
+                      <button onclick="appAction.closeSijil()" class="px-3 py-1.5 rounded-lg bg-white/10 text-xs">Tutup</button>
+                    </div>
+                  </div>
+                  <div id="printable-area" class="p-8 bg-white">
+                    <div class="border-8 border-double border-[#701F32] p-8 text-center space-y-5">
+                      ${state.profile.logoSekolah ? '<img src="' + state.profile.logoSekolah + '" class="w-24 h-24 mx-auto object-contain" />' : ''}
+                      <div>
+                        <h2 class="text-base font-bold uppercase text-[#28734B]">${esc(state.profile.namaSekolah)}</h2>
+                        <h1 class="text-3xl font-bold text-[#701F32] mt-2">SIJIL PENGHARGAAN & KEAHLIAN</h1>
+                        <p class="text-xs font-semibold text-slate-500 mt-1">KADET REMAJA SEKOLAH MUSLEH (KRSM) • SESI ${esc(state.profile.tahunSesi || '2026')}</p>
+                      </div>
+                      <p class="text-xs text-slate-600">Dengan ini diperakui bahawa</p>
+                      <h3 class="text-2xl font-bold uppercase underline decoration-[#F2C94C] decoration-4 underline-offset-8">${esc(sa.nama_penuh)}</h3>
+                      <p class="text-xs font-semibold text-slate-600">Kelas: ${esc(sa.kelas)} • Platun: ${esc(sa.jantina)}</p>
+                      <p class="text-xs text-slate-700 max-w-lg mx-auto leading-relaxed">Telah menyertai aktiviti kokurikulum <b>Kadet Remaja Sekolah Musleh (KRSM)</b> dengan pangkat <b>${esc(sa.pangkat)}</b> dan jawatan <b>${esc(sa.jawatan)}</b> serta mencatatkan kehadiran sebanyak <b>${h}/${tot} (${pct}%)</b>.</p>
+                      <div class="pt-8 grid grid-cols-2 gap-8 text-xs max-w-xl mx-auto">
+                        <div><div class="h-12"></div><p class="font-bold border-t border-slate-400 pt-1">${esc(state.profile.ketuaGuruPenasihat)}</p><p class="text-slate-500">Ketua Guru Penasihat KRSM</p></div>
+                        <div><div class="h-12"></div><p class="font-bold border-t border-slate-400 pt-1">${esc(state.profile.pengetua)}</p><p class="text-slate-500">Pengetua Sekolah</p></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>`;
+          }
+        } else if (state.printLapId) {
+          const lp = state.laporan.find(l => l.id === state.printLapId);
+          if (lp) {
+            overlayModals = `
+              <div class="fixed inset-0 z-50 bg-slate-900/70 flex items-center justify-center p-4">
+                <div class="bg-white rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl">
+                  <div class="no-print px-6 py-3.5 bg-slate-800 text-white flex justify-between items-center">
+                    <span class="text-xs font-bold">Laporan Aktiviti Rasmi KRSM</span>
+                    <div class="flex gap-2">
+                      <button onclick="window.print()" class="px-4 py-1.5 rounded-lg bg-[#28734B] text-white text-xs font-bold">Cetak / PDF</button>
+                      <button onclick="appAction.closePrintLap()" class="px-3 py-1.5 rounded-lg bg-white/10 text-xs">Tutup</button>
+                    </div>
+                  </div>
+                  <div id="printable-area" class="p-8 bg-white space-y-5 text-xs">
+                    <div class="border-b-2 border-[#701F32] pb-3"><h1 class="text-lg font-bold text-[#701F32] uppercase">${esc(state.profile.namaSekolah)}</h1><p class="font-bold text-[#28734B]">KADET REMAJA SEKOLAH MUSLEH (KRSM)</p></div>
+                    <h2 class="text-base font-bold uppercase underline text-center">${esc(lp.tajuk_laporan)}</h2>
+                    <table class="w-full border border-slate-300">
+                      <tr><td class="p-2 font-bold bg-slate-50 border">Tarikh</td><td class="p-2 border">${fmtDate(lp.tarikh)} (${esc(lp.masa)})</td></tr>
+                      <tr><td class="p-2 font-bold bg-slate-50 border">Tempat</td><td class="p-2 border">${esc(lp.tempat)}</td></tr>
+                      <tr><td class="p-2 font-bold bg-slate-50 border">Kehadiran</td><td class="p-2 border font-bold text-[#28734B]">${lp.bil_hadir}/${lp.bil_keseluruhan} kadet</td></tr>
+                    </table>
+                    <div><h4 class="font-bold text-[#701F32] uppercase">Objektif</h4><p class="mt-1">${esc(lp.objektif)}</p></div>
+                    <div><h4 class="font-bold text-[#701F32] uppercase">Ringkasan Aktiviti</h4><p class="mt-1">${esc(lp.ringkasan)}</p></div>
+                  </div>
+                </div>
+              </div>`;
+          }
+        }
+
+        document.getElementById('root').innerHTML = `
+          <div class="min-h-screen flex flex-col lg:flex-row">
+            <aside class="${state.mobileOpen ? 'fixed inset-0 z-40 flex' : 'hidden'} lg:flex lg:w-72 lg:flex-col lg:fixed lg:inset-y-0 bg-[#701F32] text-white shadow-xl">
+              <div class="p-6 border-b border-white/10 flex items-center justify-between">
+                <div class="flex items-center gap-3.5">
+                  ${logoHtml}
+                  <div>
+                    <h1 class="text-lg font-bold tracking-tight">KRSM DIGITAL</h1>
+                    <p class="text-[11px] text-rose-100/80">Kadet Remaja Sekolah Musleh</p>
+                  </div>
+                </div>
+                <button onclick="appAction.toggleMobile()" class="lg:hidden p-2 rounded-lg bg-white/10 text-xs">✕</button>
+              </div>
+              <nav class="flex-1 px-4 py-5 space-y-1.5">
+                ${navs.map(n => `
+                  <button onclick="appAction.setTab('${n.id}')" class="w-full text-left px-4 py-3 rounded-xl text-sm transition ${state.tab===n.id ? 'bg-white text-[#701F32] font-bold shadow-md' : 'text-rose-100/85 hover:bg-white/10'}">${n.label}</button>
+                `).join('')}
+              <div class="p-4 border-t border-white/10 space-y-2">
+                <button onclick="appAction.downloadBackup()" class="w-full py-2.5 px-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-semibold text-white">Muat Turun Sandaran (.JSON)</button>
+                <label class="block w-full py-2.5 px-3.5 rounded-xl bg-[#28734B] hover:bg-[#21613f] text-xs font-semibold text-white text-center cursor-pointer">Pulihkan Data (.JSON)<input type="file" accept=".json" onchange="appAction.restoreBackup(this)" class="hidden" /></label>
+              </div>
+            </aside>
+
+            <div class="flex-1 lg:pl-72 flex flex-col min-w-0">
+              <header class="sticky top-0 z-20 bg-white/95 backdrop-blur-md border-b border-slate-200 px-4 sm:px-8 py-4">
+                <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+                  <div class="flex items-center gap-3">
+                    <button onclick="appAction.toggleMobile()" class="lg:hidden px-3 py-2 rounded-xl border text-xs font-bold">☰ Menu</button>
+                    <div>
+                      <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-0.5 rounded-md bg-[#701F32]/10 text-[#701F32] text-xs font-bold">SESI ${esc(state.profile.tahunSesi || '2026')}</span>
+                        <span class="text-xs font-semibold text-slate-700">${esc(state.profile.namaSekolah)}</span>
+                      </div>
+                      <p class="text-xs text-slate-500 mt-0.5">Sistem Pengurusan Kehadiran dan Laporan Aktiviti KRSM Sekolah Menengah</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="px-3 py-1.5 rounded-full bg-[#701F32]/10 text-[#701F32] text-xs font-bold">${esc(user.peranan)}</span>
+                    <span class="px-3 py-1.5 rounded-full bg-[#28734B]/10 text-[#28734B] text-xs font-bold">DigitalKrsmSMAI</span>
+                  </div>
+                </div>
+              </header>
+
+              <main class="flex-1 px-4 sm:px-8 py-6 max-w-7xl w-full mx-auto">${mainContent}</main>
+            </div>
+          </div>
+
+          ${overlayModals}
+
+          <div id="modal-add-student" class="hidden fixed inset-0 z-50 bg-slate-900/60 flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl">
+              <div class="px-6 py-4 bg-[#28734B] text-white flex justify-between items-center"><h3 class="font-bold">Tambah Nama Pelajar Secara Manual</h3><button onclick="document.getElementById('modal-add-student').classList.add('hidden')">✕</button></div>
+              <form onsubmit="appAction.addManualStudents(event)" class="p-6 space-y-4">
+                <div class="grid grid-cols-2 gap-3">
+                  <div><label class="block text-xs font-semibold mb-1">Kelas</label><select id="m-kelas" class="w-full px-3 py-2 rounded-xl border text-xs font-semibold">${KELAS_RASMI.map(k => '<option value="' + k.nama + '">' + k.nama + '</option>').join('')}</select></div>
+                  <div><label class="block text-xs font-semibold mb-1">Platun</label><select id="m-platun" class="w-full px-3 py-2 rounded-xl border text-xs font-semibold"><option value="Banin">Banin</option><option value="Banat">Banat</option></select></div>
+                </div>
+                <div><label class="block text-xs font-semibold mb-1">Senarai Nama Pelajar (Satu nama setiap baris)</label><textarea id="m-names" rows="5" required class="w-full px-3 py-2 rounded-xl border text-sm"></textarea></div>
+                <div class="flex justify-end gap-2"><button type="button" onclick="document.getElementById('modal-add-student').classList.add('hidden')" class="px-4 py-2 rounded-xl border text-xs">Batal</button><button type="submit" class="px-5 py-2 rounded-xl bg-[#28734B] text-white text-xs font-bold">Simpan</button></div>
+              </form>
+            </div>
+          </div>
+
+          <div id="modal-new-pjp" class="hidden fixed inset-0 z-50 bg-slate-900/60 flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl">
+              <div class="px-6 py-4 bg-[#701F32] text-white flex justify-between items-center"><h3 class="font-bold">Tambah Sesi Perjumpaan</h3><button onclick="document.getElementById('modal-new-pjp').classList.add('hidden')">✕</button></div>
+              <form onsubmit="appAction.addNewPjp(event)" class="p-6 space-y-4">
+                <div><label class="block text-xs font-semibold mb-1">Tarikh</label><input id="p-tarikh" type="date" required value="${new Date().toISOString().slice(0,10)}" class="w-full px-3 py-2 rounded-xl border text-sm" /></div>
+                <div><label class="block text-xs font-semibold mb-1">Tajuk Aktiviti</label><input id="p-tajuk" required placeholder="Contoh: Latihan Kawad Kaki" class="w-full px-3 py-2 rounded-xl border text-sm" /></div>
+                <div><label class="block text-xs font-semibold mb-1">Tempat</label><input id="p-tempat" value="Dataran Perhimpunan Sekolah" class="w-full px-3 py-2 rounded-xl border text-sm" /></div>
+                <div class="flex justify-end gap-2"><button type="button" onclick="document.getElementById('modal-new-pjp').classList.add('hidden')" class="px-4 py-2 rounded-xl border text-xs">Batal</button><button type="submit" class="px-5 py-2 rounded-xl bg-[#28734B] text-white text-xs font-bold">Cipta</button></div>
+              </form>
+            </div>
+          </div>
+
+          <div id="modal-new-lap" class="hidden fixed inset-0 z-50 bg-slate-900/60 flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl">
+              <div class="px-6 py-4 bg-[#701F32] text-white flex justify-between items-center"><h3 class="font-bold">Bina Laporan Aktiviti</h3><button onclick="document.getElementById('modal-new-lap').classList.add('hidden')">✕</button></div>
+              <form onsubmit="appAction.addLaporan(event)" class="p-6 space-y-3">
+                <div><label class="block text-xs font-semibold mb-1">Tajuk Laporan</label><input id="l-tajuk" required placeholder="Laporan Aktiviti Mingguan KRSM" class="w-full px-3 py-2 rounded-xl border text-sm" /></div>
+                <div class="grid grid-cols-2 gap-3">
+                  <div><label class="block text-xs font-semibold mb-1">Tarikh</label><input id="l-tarikh" type="date" value="${new Date().toISOString().slice(0,10)}" class="w-full px-3 py-2 rounded-xl border text-xs" /></div>
+                  <div><label class="block text-xs font-semibold mb-1">Tempat</label><input id="l-tempat" value="Dataran Perhimpunan Sekolah" class="w-full px-3 py-2 rounded-xl border text-xs" /></div>
+                </div>
+                <div><label class="block text-xs font-semibold mb-1">Objektif Aktiviti</label><textarea id="l-objektif" rows="2" class="w-full px-3 py-2 rounded-xl border text-xs"></textarea></div>
+                <div><label class="block text-xs font-semibold mb-1">Ringkasan Aktiviti</label><textarea id="l-ringkasan" rows="2" class="w-full px-3 py-2 rounded-xl border text-xs"></textarea></div>
+                <div><label class="block text-xs font-semibold mb-1">Impak & Pencapaian</label><textarea id="l-impak" rows="2" class="w-full px-3 py-2 rounded-xl border text-xs"></textarea></div>
+                <div class="flex justify-end gap-2"><button type="button" onclick="document.getElementById('modal-new-lap').classList.add('hidden')" class="px-4 py-2 rounded-xl border text-xs">Batal</button><button type="submit" class="px-5 py-2 rounded-xl bg-[#28734B] text-white text-xs font-bold">Simpan Laporan</button></div>
+              </form>
+            </div>
+          </div>
+        `;
+      }
+
+      render();
+    })();
+  </script>
+</body>
+</html>
